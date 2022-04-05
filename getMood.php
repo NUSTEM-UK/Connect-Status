@@ -12,7 +12,7 @@ function getMoodData($dbConn) {
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Origin: *");
 
-    $sql = "SELECT * FROM mood";
+    $sql = "SELECT * FROM moods";
 
     try {
         $moodResults = $dbConn->query($sql);
