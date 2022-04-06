@@ -22,17 +22,27 @@
             <div class="col">
                 <div class="card">
                     <h2>System mood</h2>
-                    <p>Mood icon goes here.</p>
-                    <img class="img-fluid placeholder" src="img/" alt="">
+                    <p id="currentSystemMood">Mood goes here.</p>
+                    <img id="currentSystemMoodIcon" class="img-fluid placeholder" src="img/" alt="">
                 </div>
-                    <h4 class="pt-3">Send:</h4>
-                    <div class="d-grid gap-1">
-                        <button type="button" class="btn btn-sm btn-primary">HAPPY</button>
-                        <button type="button" class="btn btn-sm btn-primary">SAD</button>
-                        <button type="button" class="btn btn-sm btn-primary">HEART</button>
-                        <button type="button" class="btn btn-sm btn-primary">SKULL</button>
-                        <button type="button" class="btn btn-sm btn-primary">SILLY</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="pt-3">Send:</h4>
+                            <div class="d-grid gap-1">
+                                <button type="button" class="btn btn-sm btn-primary">HAPPY</button>
+                                <button type="button" class="btn btn-sm btn-primary">SAD</button>
+                                <button type="button" class="btn btn-sm btn-primary">SKULL</button>
+                                <button type="button" class="btn btn-sm btn-primary">HEART</button>
+                                <button type="button" class="btn btn-sm btn-primary">SILLY</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4 class="pt-3">Mood totals:</h4>
+                            <div id="show-moods">Placeholder</div>
+                        </div>
                     </div>
+                </div>
             </div>
             <div class="col-8">
                 <div class="card">
@@ -83,10 +93,12 @@
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script>
+<script src="static/js/main.js"></script>
+<!-- <script>
     $(document).ready(function() {
         $('#mac-table').DataTable();
+        $()
     } );
-</script>
+</script> -->
 </body>
 </html>
