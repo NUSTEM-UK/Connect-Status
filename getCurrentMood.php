@@ -3,23 +3,23 @@
 try {
     require_once('functions.php');
     $dbConn = getConnection();
-    echo getStatusData($dbConn);
+    echo getMoodData($dbConn);
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
 
-function getStatusData($dbConn) {
+function getMoodData($dbConn) {
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Origin: *");
 
-    $sql = "SELECT mac_string, last_seen, pings, label, cohort
-            FROM devices
-            WHERE first_seen IS NOT NULL";
+    $sql = "SELECT paramValue FROM params WHERE paramName = 'current_mood'";
 
     try {
-        $statusResults = $dbConn->query($sql);
-        $statusData = $statusResults->fetchAll(PDO::FETCH_ASSOC);
-        return json_encode($statusData);
+        $moodResults = $dbConn->query($sql);
+        $moodData = $moodResults->fetch(PDO::FETCH_ASSOC);
+        return json_encode($moodData);
+        // return $moodData['paramValue'];
+        // return print_r(($moodData));
     } catch (Exception $e) {
         throw new Exception("Database problem: " . $e->getMessage(), 0, $e);
     }

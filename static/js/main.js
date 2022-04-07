@@ -1,7 +1,9 @@
 $(document).ready(function () {
     // Initialize page
     updateMoods();
-    setInterval(updateMoods, 10000);
+    setInterval(updateMoods, 30000);
+    updateCurrentMood();
+    setInterval(updateCurrentMood, 2000);
     // updateDevices();
     // setInterval(updateDevices, 5000);
     var table = $('#mac-table').DataTable({
@@ -9,12 +11,12 @@ $(document).ready(function () {
             "url": "/getDevices.php",
             "dataSrc": ""
         },
-        aoColumns: [
-            { mData: 'mac_address' },
-            { mData: 'last_seen' },
-            { mData: 'pings' },
-            { mData: 'label' },
-            { mData: 'cohort' }
+        columns: [
+            { data: 'mac_string' },
+            { data: 'last_seen' },
+            { data: 'pings' },
+            { data: 'label' },
+            { data: 'cohort' }
         ],
         autofill: true,
         select: true,
@@ -36,7 +38,7 @@ function updateMoods(e) {
 
 function parseMoods(data) {
     // e.preventDefault();
-    console.log(data);
+    // console.log(data);
 
     // Grab the selector
     const showMoods = $('#show-moods');
@@ -50,6 +52,24 @@ function parseMoods(data) {
 
 }
 
+function updateCurrentMood(e) {
+    $.getJSON('/getCurrentMood.php', (data) => {
+        parseCurrentMood(data);
+    });
+};
+
+function parseCurrentMood(data) {
+    // e.preventDefault();
+    // console.log(data);
+    // console.log(data.paramValue);
+
+    // Grab the selector
+    const showCurrentMood = $('#show-current-mood');
+    // const parseData = JSON.parse(data);
+    showCurrentMood.html(data.paramValue);
+}
+
+
 function updateDevices(e) {
     $.getJSON('/getDevices.php', (data) => {
         parseDevices(data);
@@ -57,7 +77,7 @@ function updateDevices(e) {
 };
 
 function parseDevices(data) {
-    console.log(data);
+    // console.log(data);
 
     // Grab the selector
     const deviceTable = $('#mac-table');
