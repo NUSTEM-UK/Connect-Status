@@ -26,7 +26,7 @@ $(document).ready(function () {
     setInterval(function () {
         // Reload, retaining user paging
         table.ajax.reload((null, false));
-    }, 5000);
+    }, 10000);
 });
 
 
@@ -63,10 +63,23 @@ function parseCurrentMood(data) {
     // console.log(data);
     // console.log(data.paramValue);
 
-    // Grab the selector
-    const showCurrentMood = $('#show-current-mood');
-    // const parseData = JSON.parse(data);
-    showCurrentMood.html(data.paramValue);
+    // Text replacement
+    // const showCurrentMood = $('#show-current-mood');
+    // showCurrentMood.html(data.paramValue);
+
+    //  Check we have a valid mood
+    if (data.paramValue === 'HAPPY' ||
+        data.paramValue === 'SAD' ||
+        data.paramValue === 'HEART' ||
+        data.paramValue === 'SKULL' ||
+        data.paramValue === 'SILLY' ||
+        data.paramValue === 'DUCK') {
+            const moodIcon = $('#currentSystemMoodIcon');
+            const moodImageSRC = 'static/img/mood-' + data.paramValue + '.png';
+            moodIcon.attr('src', moodImageSRC);
+        } else {
+            console.log("Mood error");
+        }
 }
 
 

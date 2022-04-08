@@ -15,15 +15,17 @@
 
     <header class="mt-2 mb-3 p-3 bg-warning rounded">
         <h1>Connect Status</h1>
-        <span class="fs-4">Jumbotron-like header</span>
+        <p>
+            Auto-updates: main table every ten seconds.
+        </p>
     </header>
 
         <div class="row">
             <div class="col">
                 <div class="card p-2 bg-light">
                     <h2>System mood</h2>
-                    <p id="show-current-mood">Mood goes here.</p>
-                    <!-- <img id="currentSystemMoodIcon" class="img-fluid placeholder" src="img/" alt=""> -->
+                    <!-- <p id="show-current-mood">Mood goes here.</p> -->
+                    <img id="currentSystemMoodIcon" class="img-fluid" src="static/img/mood-HAPPY.png" alt="">
                 </div>
                 <div class="container">
                     <div class="row">
@@ -38,13 +40,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h4 class="pt-3">Mood totals:</h4>
+                            <h4 class="pt-3">Counts:</h4>
                             <div id="show-moods">Placeholder</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-9">
                 <div class="card p-2 bg-light">
                     <h2>Online</h2>
                     <table id="mac-table" class="table">
