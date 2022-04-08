@@ -11,6 +11,31 @@
     <title>Connect Status</title>
 </head>
 <body>
+
+    <?php
+    require_once('functions.php');
+    console_log("Hello world");
+
+    $moodCommand = filter_has_var(INPUT_GET, 'moodCommand') ? trim($_GET['moodCommand']) : null;
+
+    if (
+        $moodCommand === 'HAPPY' ||
+        $moodCommand === 'SAD' ||
+        $moodCommand === 'SKULL' ||
+        $moodCommand === 'HEART' ||
+        $moodCommand === 'SILLY' ||
+        $moodCommand === 'DUCK') {
+            # we have a valid mood...
+            sendMood($moodCommand);
+    } elseif (!empty($moodCommand)) {
+        console_log("Invalid mood: {$moodCommand}");
+    } else {
+        // No command received, either valid or invalid, so just pass.
+    }
+
+    ?>
+
+
     <div class="container py-4">
 
     <header class="mt-2 mb-3 p-3 bg-warning rounded">

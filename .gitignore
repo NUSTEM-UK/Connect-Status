@@ -1,3 +1,6 @@
+# Custom
+clientsecret.php
+
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
@@ -472,3 +475,4 @@ composer.lock
 *.css.map
 *.sass.map
 *.scss.map
+clientsecrets.php
