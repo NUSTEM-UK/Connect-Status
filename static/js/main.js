@@ -8,7 +8,7 @@ $(document).ready(function () {
     // setInterval(updateDevices, 5000);
     var table = $('#mac-table').DataTable({
         "ajax": {
-            "url": "/getDevices.php",
+            "url": "../getDevices.php",
             "dataSrc": ""
         },
         columns: [
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 
 function updateMoods(e) {
-    $.getJSON('/getMood.php', (data) => {
+    $.getJSON('../getMood.php', (data) => {
         parseMoods(data);
     });
 };
@@ -54,7 +54,7 @@ function parseMoods(data) {
 }
 
 function updateCurrentMood(e) {
-    $.getJSON('/getCurrentMood.php', (data) => {
+    $.getJSON('../getCurrentMood.php', (data) => {
         parseCurrentMood(data);
     });
 };
