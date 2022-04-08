@@ -50,18 +50,22 @@
                 <div class="card p-2 bg-light">
                     <h2>System mood</h2>
                     <!-- <p id="show-current-mood">Mood goes here.</p> -->
-                    <img id="currentSystemMoodIcon" class="img-fluid" src="static/img/mood-HAPPY.png" alt="">
+                    <img id="currentSystemMoodIcon" class="img-fluid" src="static/img/mood-placeholder.png" alt="">
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col">
                             <h4 class="pt-3">Send:</h4>
                             <div class="d-grid gap-1">
-                                <button type="button" class="btn btn-sm btn-primary">HAPPY</button>
-                                <button type="button" class="btn btn-sm btn-primary">SAD</button>
-                                <button type="button" class="btn btn-sm btn-primary">SKULL</button>
-                                <button type="button" class="btn btn-sm btn-primary">HEART</button>
-                                <button type="button" class="btn btn-sm btn-primary">SILLY</button>
+                                <form action="" method="get">
+                                    <div class="btn-group-vertical">
+                                        <button name="moodCommand" type="submit" class="btn btn-block btn-sm btn-primary mb-2" value="HAPPY">HAPPY</button>
+                                        <button name="moodCommand" type="submit" class="btn btn-block btn-sm btn-primary mb-2" value="SAD">SAD</button>
+                                        <button name="moodCommand" type="submit" class="btn btn-block btn-sm btn-primary mb-2" value="SKULL">SKULL</button>
+                                        <button name="moodCommand" type="submit" class="btn btn-block btn-sm btn-primary mb-2" value="HEART">HEART</button>
+                                        <button name="moodCommand" type="submit" class="btn btn-block btn-sm btn-primary mb-2" value="SILLY">SILLY</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="col">

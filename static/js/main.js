@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Initialize page
     updateMoods();
     setInterval(updateMoods, 30000);
-    updateCurrentMood();
+    // updateCurrentMood();
     setInterval(updateCurrentMood, 2000);
     // updateDevices();
     // setInterval(updateDevices, 5000);
