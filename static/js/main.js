@@ -44,9 +44,9 @@ function parseMoods(data) {
     const showMoods = $('#show-moods');
 
     // Parse mood JSON data, insert into list items
-    showMoods.html('<ul>');
+    showMoods.html('<ul class="list-group">');
     var moodsInfo = data.map(function (item) {
-        showMoods.append('<li>' + item.mood_name + ' : ' + item.mood_count + '</li>\n');
+        showMoods.append('<li class="list-group-item mb-1">' + item.mood_name + ' : ' + item.mood_count + '</li>\n');
     });
     showMoods.append('</ul>');
 
