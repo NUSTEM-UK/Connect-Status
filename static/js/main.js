@@ -21,7 +21,8 @@ $(document).ready(function () {
         autofill: true,
         select: true,
         responsive: true,
-        length: 25
+        length: 25,
+        order: [[1, "desc"]]
     });
     setInterval(function () {
         // Reload, retaining user paging
